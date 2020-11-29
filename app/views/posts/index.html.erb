@@ -13,4 +13,10 @@
     </div>
   </div>
 </main>
- 
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <%= render 'like', post: post %>
+    </tr>
+  <% end %>
+</tbody>
