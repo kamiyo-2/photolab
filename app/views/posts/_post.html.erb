@@ -1,0 +1,10 @@
+
+    <div class="card">
+      <div class="card__body">
+       <%= attachment_image_tag post, :post_image, class: :card_img  %>
+        </div>
+          <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
+       </div> 
+     </div>
+
+   
