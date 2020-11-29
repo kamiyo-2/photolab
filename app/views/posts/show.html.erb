@@ -1,0 +1,24 @@
+<%= form_with(model: @post, url: posts_path, local: true) do |f| %>
+ <div class="field">
+ <p class="detail__message">
+            <%= @post.text %>
+          </p>
+  </div>  
+
+  
+  <div class="main-contents">
+    <div class="image-content">
+      <%= attachment_image_tag @post, :post_image %>
+   </div>
+   <div class="from-content">
+<div class="title-content">
+       <div class="title-name">
+         <p> レシピ</p>
+       </div>
+     <div class="valu-name">
+       <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集", edit_post_path(@post.id), method: :get, class: :prototype__btn %>
+        </div>
+      <% end %>
+       <% end %>
