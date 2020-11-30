@@ -1,0 +1,30 @@
+.form {
+  padding: 5% 20%;
+}
+
+.field {
+  height: 700px;
+}
+
+.image_field {
+  height: 600px;
+}
+.text_field {
+  margin: 10px;
+}
+
+img {
+  
+  width: 100%;
+  object-fit: contain
+  pointer-events: none;
+  border-radius: 40px;
+}
+
+.image {
+  padding: 5%;
+  background-color: rgb(236, 236, 236);
+}
+.post_image {
+  display: none;
+}

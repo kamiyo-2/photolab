@@ -1,16 +1,22 @@
-<div class=form>
-  <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
-    <div class="field">
-      <%= f.label :post_image, "画像" %><br />
-      <%= f.file_field :post_image %>
-    </div>
-    <div class="field">
-      <%= f.label :text, "説明" %><br />
-      <%= f.text_area :text, class: :form__text %>
-    </div>
-    <div class="actions">
-      <%= f.submit "保存する", class: :form__btn  %>
-    </div>
-  <% end %>
+<div class="form">
+  <div class="field">
+    <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
+      <div class="image_field">
+      <div class="image">
+      <div id="image-list"></div>
+          <label for="post_post_image"><%= image_tag "photo.jpg" %></label>
+        <%= f.file_field :post_image, class: :post_image %>
+        
+      </div>
+      <div class="text_field">
+        <%= f.label :text, "説明" %><br />
+        <%= f.text_area :text, class: :form__text %>
+      </div>
+  </div>  
+      <div class="actions">
+        <%= f.submit "保存する", class: :form__btn  %>
+      </div>
+      
+    <% end %>
 </div>
 
