@@ -24,6 +24,7 @@ img {
 .image {
   padding: 5%;
   background-color: rgb(236, 236, 236);
+  border-radius: 40px;
 }
 .post_image {
   display: none;
