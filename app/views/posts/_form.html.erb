@@ -1,22 +1,23 @@
 <div class="form">
   <div class="field">
     <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
-      <div class="image_field">
       <div class="image">
-      <div id="image-list"></div>
+          <div id="image-list"></div>
           <label for="post_post_image"><%= image_tag "photo.jpg" %></label>
-        <%= f.file_field :post_image, class: :post_image %>
-        
+          <%= f.attachment_field :post_image, class: :post_image %>
+        <div class="text_field">
+          <%= f.text_area :text ,placeholder:"オプションを記入" %>
+        </div>
       </div>
-      <div class="text_field">
-        <%= f.label :text, "説明" %><br />
-        <%= f.text_area :text, class: :form__text %>
+      <div class="action_form">
+        <div class="actions">
+        <%= button_to "キャンセル", {controller: 'posts', action: 'index'}, {method: :get} %>
+        </div>
+        <div class="actions">
+          <%= f.submit "投稿を送信" %>
+          </div>
+        </div>
       </div>
-  </div>  
-      <div class="actions">
-        <%= f.submit "保存する", class: :form__btn  %>
-      </div>
-      
     <% end %>
+  </div>
 </div>
-
