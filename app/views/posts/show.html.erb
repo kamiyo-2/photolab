@@ -1,55 +1,15 @@
 <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
  <div class="field">
- <p class="detail__message">
-            <%= @post.text %>
-          </p>
+   <p class="detail__message">
+     <%= @post.text %>
+   </p>
+     <%= attachment_image_tag @post, :post_image  %>
   </div>  
-
-  
-  <div class="main-contents">
-    <div class="image-content">
-      <%= attachment_image_tag @post, :post_image %>
-   </div>
-   <div class="from-content">
-<div class="title-content">
-       <div class="title-name">
-         <p> レシピ</p>
-       </div>
-     <div class="valu-name">
-       <% if user_signed_in? && current_user.id == @post.user_id %>
+<% end %>
+  <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= link_to current_user.name,user_path(@post.user.id), class: :prototype__user %>
         <div class="prototype__manage">
-          <%= link_to "編集", edit_post_path(@post.id), method: :get, class: :prototype__btn %>
+          <%= link_to "編集する", edit_post_path(@post.id), method: :get, class: :prototype__btn %>
+          <%= link_to "削除する", post_path, method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
-       <% end %>
-
-        <div class="prototype__comments">
-          <% if user_signed_in?%>
-            <%= form_with(model: [@post, @comment], local: true) do |f| %>
-              <div class="field">
-                <%= f.label :text, "コメント" %><br />
-                <%= f.text_field :text %>
-              </div>
-              <div class="actions">
-                <%= f.submit "送信する", class: :form__btn  %>
-              </div>
-            <% end %> 
-          <% end %> 
-          <ul class="comments_lists">
-            <% if @comments %>
-           <% @comments.each do |comment| %>
-              <li class="comments_list">
-              <p>
-               <%= comment.text %>
-                 <%# <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %> %>
-              </p> 
-              </li>
-              <% end %>
-             <% end %>
-          </ul>
-        </div>
-
-
-
-
-
