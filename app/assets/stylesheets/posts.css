@@ -114,3 +114,39 @@ input {
   width: 100%;
 }
 
+.field_show {
+  height: 120vh;
+}
+
+
+
+
+
+
+.navbar {
+  width: 50%;
+}
+.nav-lists {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.red{
+  background-color: red;
+}
+.show-lists{
+  width: 200px;
+  position: absolute;
+  right: 370px;
+  top: 70px;
+  background-color: #ffffff;
+}
+.pull_down_list{
+  border: 1px solid #eee;
+}
+
+
+.hidden {
+  display: none;
+}
