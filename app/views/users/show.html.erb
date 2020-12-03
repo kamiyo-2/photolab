@@ -1,0 +1,48 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@name}さんの情報"%>
+      </h2>
+      <div class='user-form'>
+        <div class="user-forms">
+          <div class='user_image'>
+            <%= image_tag "photo.jpg" %>
+          </div>
+          <div class="user_name">
+          <%= @name %>
+          </div>
+        </div>
+        <div class="user_profile">
+          <div class="user_profiles">
+          <%= @profile %>
+          </div>
+        </div>
+        <div class="user_button">
+          <div class="user_buttons">投稿
+          </div>
+          <div class="user_buttons">フォロー
+          </div>
+          <div class="user_buttons">フォロワー
+          </div>
+          <div class="user_buttons">いいね
+          </div>
+        </div>
+      </div>  
+      <div class="user-post">
+        <div class="`user_post-contents">
+          <% @posts.each do |post| %>
+            <div class="user_post-content">
+              <div class="post_body">
+                <div class='image_content'>
+                  <%= attachment_image_tag post, :post_image  %>
+                </div>
+                <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
+              </div>
+            </div> 
+          <% end %>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>

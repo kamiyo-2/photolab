@@ -1,0 +1,91 @@
+.main {
+  height: 300vh;
+}
+
+.inner {
+  height: 100%;
+}
+
+
+.user_image > img {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  background-color: green;
+  border-radius: 50%;
+  margin: 38px 40px 0 40px;
+}
+
+.user-form {
+  height: 100vh;
+  width: 100wh;
+}
+
+.user__wrapper {
+  height: 100vh;
+}
+
+.user_name {
+  height: 15vh;
+  width: 30vw;
+  margin: 100px 50px 50px 200px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.user_profiles {
+  height: 20vh;
+  width: 50vw;
+  margin: 100px 150px 150px 100px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.user_profile {
+  height: 20vh;
+  width: 50vw;
+  margin: 100px 150px 150px 100px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.user-forms {
+  height: 30vh;
+  width: 70vw;
+  display: flex;
+}
+
+.user-post {
+  height: 30vh;
+}
+
+.user_post-contents {
+  width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.user_post-content {
+  width: 26%;
+  margin: 15px 2.5%;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fffefc;
+  margin: 15px;
+  float: left;
+}
+
+.user_button {
+  display: flex;
+  height: 100px;
+}
+
+.user_buttons {
+  width: 30vw;
+  margin: 10px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
