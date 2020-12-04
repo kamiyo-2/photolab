@@ -20,6 +20,11 @@ img {
   border-radius: 40px;
 }
 
+img.logo {
+  width: 120vw;
+  border-radius: 0;
+}
+
 .image {
   padding: 2.5% 3% 0 3%;
   height: 115vh;
