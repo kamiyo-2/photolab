@@ -20,6 +20,11 @@ img {
   border-radius: 40px;
 }
 
+img.logo {
+  width: 120vw;
+  border-radius: 0;
+}
+
 .image {
   padding: 2.5% 3% 0 3%;
   height: 115vh;
@@ -75,7 +80,7 @@ input {
   padding: 20px 50px 20px 0;
 }
 
-.image_content > img {
+img.attachment.post.post_image {
   margin: 0 0;
   
   background-color: #F5F5F5;
@@ -85,6 +90,10 @@ input {
     height: 280px;
     object-fit: cover;
     object-position: 50% 100%;
+}
+
+.post_image{
+  height: 500px;
 }
 
 .post-contents {
@@ -117,11 +126,6 @@ input {
 .field_show {
   height: 120vh;
 }
-
-
-
-
-
 
 .navbar {
   width: 50%;

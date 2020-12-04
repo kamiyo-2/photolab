@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.main_form {
+  padding: 150px 0 0 0;
+}
+
+
+header {
+  background-color: #fc8023;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 94vw;
+  z-index: 10;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+
+  .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 0.5s;
+    text-align: left;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: white;
+        margin: 0 15px;
+        
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+.nav_botton {
+  padding: 0 0 0 40vw;
+}
+
+header.scroll-nav {
+  padding: 10px 50px;
+  background: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header.scroll-nav .logo,
+header.scroll-nav ul li a {
+  color: black;
+}

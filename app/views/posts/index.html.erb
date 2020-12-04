@@ -1,12 +1,12 @@
-<main class="main">
+<main class="main"><%= link_to image_tag("andreas-kruck-l8ypMiU1Hio-unsplash.jpg", class: :logo), root_path %>
+
   <div class="inner">
-    <%= link_to 'New Post', new_post_path %>
       <div class="post-contents">
         <% @posts.each do |post| %>
           <div class="post-content">
             <div class="post_body">
               <div class='image_content'>
-                <%= attachment_image_tag post, :post_image  %>
+                <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
               </div>
               <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
             </div>
@@ -16,4 +16,3 @@
    </div>
 </div>
 
-<%= link_to "#{current_user.name}さん", "/users/#{current_user.id}",  class: :greeting__link %>
