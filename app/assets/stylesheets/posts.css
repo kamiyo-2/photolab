@@ -80,7 +80,7 @@ input {
   padding: 20px 50px 20px 0;
 }
 
-.image_content > img {
+img.attachment.post.post_image {
   margin: 0 0;
   
   background-color: #F5F5F5;
@@ -90,6 +90,10 @@ input {
     height: 280px;
     object-fit: cover;
     object-position: 50% 100%;
+}
+
+.post_image{
+  height: 500px;
 }
 
 .post-contents {
