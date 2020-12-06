@@ -14,6 +14,7 @@
       <div class="nav_botton">
       <ul>
         <% if user_signed_in? %>
+        <%= link_to current_user.name, edit_user_path(current_user) %>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %></li>
           <li><%= link_to "New Proto",  new_post_path, class: :nav__btn %></li>
            <li>    <%= link_to current_user.name, user_path(current_user) %></li>

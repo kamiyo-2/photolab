@@ -2,8 +2,8 @@
   <div class="field">
     <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
       <div class="image">
-          <div id="image-list"></div>
-          <label for="post_post_image"><%= image_tag "photo.jpg" %></label>
+        <div id="image-list"></div>
+        <label for="post_post_image"><%= image_tag "photo.jpg" %></label>
           <%= f.attachment_field :post_image, class: :post_image %>
         <div class="text_field">
           <%= f.text_area :text ,placeholder:"オプションを記入" %>
