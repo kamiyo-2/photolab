@@ -91,5 +91,84 @@
 }
 
 .user_field {
+
+}
+
+input#user_name {
+  width: 13vw;
+  height: 50px;
+}
+
+input#user_profile {
+  width: 50vw;
+  height: 50vh;
+}
+
+div.user_profiles {
+  width: 100vh;
+  height: 20vh;
+  margin: 100px 150px 150px 25px;
+}
+
+
+
+
+
+.user_image {
+  position: relative;
+  height: 280px;
+}
+
+img.attachment.user.user_image.fallback {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+
+.user_texts {
+  position: relative;
+}
+
+.user_name {
+height: 300px;
+margin: 30px 30px 0 30px;
+position: relative;
+}
+
+/* input#user_name {
+  width: 65%;
+  height: 10vh;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+} */
+
+.user_profiles {
   
+  height: 100px;
+}
+
+input#user_profile {
+  width: 65%;
+  height: 10vh;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+input.btn {
+  width: 45%;
+  height: 10vh;
+  position: absolute;
+  top: 280px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

@@ -87,9 +87,9 @@ img.attachment.post.post_image {
   
   border-radius: 10px;
   width: 100%;
-    height: 280px;
-    object-fit: cover;
-    object-position: 50% 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: 50% 100%;
 }
 
 .post_image{
@@ -153,4 +153,12 @@ img.attachment.post.post_image {
 
 .hidden {
   display: none;
+}
+
+img.attachment.post.post_image {
+  height: 90vh;
+}
+
+img.attachment.post.post_image {
+  height: 40vh;
 }

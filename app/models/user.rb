@@ -9,6 +9,7 @@ class User < ApplicationRecord
          validates :name, presence: true
          validates :profile, presence: true
 
+         attachment :user_image
          has_many :posts
          has_many :likes
 

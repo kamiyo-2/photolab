@@ -1,0 +1,33 @@
+<div class="main_form">
+  <div class="main">
+    <div class="inner">
+      <%= form_for @user do |f| %>
+        <div class="user__wrapper">
+          <div class='users-form'>
+            <div class="user-forms">
+              <div class='user_image'>
+                <div id="image-list"></div>
+                <label for="user_images"></label>
+                  <%= attachment_image_tag @user, :user_image, fallback: "photo.jpg" %>
+                  <%= f.attachment_field :user_image, class: "input" %>
+                </div>
+              </div>
+              <div class="user_texts">
+                <div class="user_names">
+                  <%= f.text_field :name, autofocus: true%>
+                </div>
+                <div class="user_profiles">
+                  <%= f.text_field :profile%>
+                </div>
+                 <%= f.password_field :password, autocomplete: "new-password" %>
+                <div class='actions'>
+                  <%= f.submit "Update", class: 'btn'%>
+                </div>
+              </div> 
+            </div>  
+          </div> 
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
