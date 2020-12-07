@@ -1,10 +1,18 @@
-<td><%= post.text %></td>
+
 
 <% if current_user.liked_by?(post.id) %>
-  <td><%= link_to 'いいね外す', destroy_like_path(post), method: :DELETE, remote: true %> <%= post.likes.count %></td>
+  <div>
+    <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
+      <i class="fa fa-heart unlike-btn"></i>
+    <% end %>
+    <%= post.likes.count %>
+  </div>
 <% else %>
-  <td><%= link_to 'いいねする', create_like_path(post), method: :POST, remote: true %> <%= post.likes.count %></td>
+  <div>
+    <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
+      <i class="fa fa-heart like-btn"></i>
+    <% end %>
+    <%= post.likes.count %>
+  </div>
 <% end %>
-<td><%= link_to 'Show', post %></td>
-<td><%= link_to 'Edit', edit_post_path(post) %></td>
-<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+

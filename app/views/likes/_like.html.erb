@@ -1,34 +1,23 @@
 
-<%if user_signed_in? %>
 
- <% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
+    <div class="inner">
+      <div class="post-contents">
+        <table>
+          <% @posts.each do |post| %>
+            <div class="post-content">
+              <div class="post_body">
+                <div class='image_content'>
+                  <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
+                </div>
+                <tr id="post_<%= post.id %>">
+                  <%= render 'post', post: post %>
+                </tr>
+              </div>
+                <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
+              </div> 
+          <% end %>
+        </table>
+      </div>
+   </div>
+</div>
 
- <%=link_to post_like_path(post, post.likes), 
-
- {method: "delete", remote: true, class: "likes-count"} do %>
-
- <i class="fas fa-heart haert-red"></i>
-
- <%= post.likes.count %>
-
- <% end %>
-
- <% else %>
-
- <%=link_to post_likes_path(post), 
-
- {method: "post", remote: true, class: "likes-count"} do %>
-
- <i class="far fa-heart"></i>
-
- <%= post.likes.count %>
-
- <% end %>
-
-<% end %>
-
- <% else %>
-
- <i class="far fa-heart"></i><%= post.likes.count %>
-
-<% end %>

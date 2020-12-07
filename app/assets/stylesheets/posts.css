@@ -162,3 +162,11 @@ img.attachment.post.post_image {
 img.attachment.post.post_image {
   height: 40vh;
 }
+
+.text_form {
+  display: flex;
+}
+
+.like {
+  margin: 0 0 0 15px;
+}
