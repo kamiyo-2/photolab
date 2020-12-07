@@ -1,0 +1,23 @@
+
+
+    <div class="inner">
+      <div class="post-contents">
+        <table>
+          <% @posts.each do |post| %>
+            <div class="post-content">
+              <div class="post_body">
+                <div class='image_content'>
+                  <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
+                </div>
+                <tr id="post_<%= post.id %>">
+                  <%= render 'post', post: post %>
+                </tr>
+              </div>
+                <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
+              </div> 
+          <% end %>
+        </table>
+      </div>
+   </div>
+</div>
+
