@@ -9,6 +9,7 @@
                   <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
                 </div>
               </div>
+              
               <%= link_to post.user.name,  user_path(post.user.id), method: :get, class: :card__title%>
               <div class="text_form">
                   <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
