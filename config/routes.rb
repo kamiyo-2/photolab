@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users 
+  resources :users do
+    resource :follow
+    resources :followings
+    resources :followers
+  end
 
   post 'like/:id' => 'likes#create', as: 'create_like'
 
