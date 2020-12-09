@@ -191,3 +191,20 @@ display: flex;
 .image label {
   padding: 740px 0 0 0;
 }
+
+img.attachment.post.post_image.posts {
+  height: 100vh;
+}
+
+.nav-lists {
+padding: 0 0 0 65vw;
+} 
+
+div#pull-down.show-lists.hidden {
+  padding: 130px 0 0 0;
+  margin-left: auto;
+}
+
+.nav {
+  margin-left: auto;
+}

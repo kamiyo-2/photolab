@@ -16,32 +16,61 @@
   margin: 38px 40px 0 40px;
 }
 
+.user_names {
+  font-size: 40px;
+}
+
 .user-form {
-  height: 100vh;
+  height: 36vh;
   width: 100wh;
 }
 
 .user__wrapper {
-  height: 100vh;
+ 
+}
+.user_format {
+  display: flex;
+  height: 50px;
+}
+.count {
+
+}
+
+.format_button {
+  height: 10vh;
+  width: 14vw;
+  padding: 100px 10px;
+}
+
+.user_profile {
+  height: 20vh;
+}
+
+a.follow {
+  padding: 0 37vh;
+  font-size: 40px;
+}
+
+a.unfollow {
+  padding: 0 34vh;
+  font-size: 40px;
+}
+
+a.edit_button {
+  padding: 0 32%;
+  font-size: 40px;
 }
 
 .user_name {
-  height: 15vh;
-  width: 30vw;
-  margin: 100px 50px 50px 200px;
-  font-size: 50px;
-  text-align: center;
+  font-size: 30px;
+  padding: 1vh 7vw;
 }
 
-
-
-/* .user_profile {
-  height: 20vh;
-  width: 50vw;
-  margin: 100px 150px 150px 100px;
-  font-size: 50px;
-  text-align: center;
-} */
+.user_profiles {
+  height: 10vh;
+  font-size: 25px;
+  padding: 1vh 7vw;
+}
 
 .user-forms {
   height: 30vh;
@@ -78,7 +107,7 @@
 
 .user_buttons {
   width: 30vw;
-  margin: 10px;
+  margin: 0 0 0 21vw;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -122,18 +151,11 @@ img.attachment.user.user_image.photo.fallback {
   position: relative;
 }
 
-.user_name {
-height: 300px;
-margin: 30px 30px 0 30px;
-position: relative;
-}
 
 
 
-.user_profiles {
-  
-  height: 100px;
-}
+
+
 /* 
 input#user_profile {
   width: 65%;
