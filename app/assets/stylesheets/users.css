@@ -47,12 +47,12 @@
 }
 
 a.follow {
-  padding: 0 37vh;
+  padding: 0 58vh;
   font-size: 40px;
 }
 
 a.unfollow {
-  padding: 0 34vh;
+  padding: 0 55vh;
   font-size: 40px;
 }
 
@@ -382,4 +382,19 @@ h1 {
 
 .box-newusr a:hover {
   background: #e7e9ec;
+}
+
+/* followers */
+
+.followers {
+  display: flex;
+}
+
+.follower_icon {
+
+}
+
+.follower_name {
+  padding: 0 0 0 102px;
+  font-size: 35px;
 }
