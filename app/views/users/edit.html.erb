@@ -6,7 +6,7 @@
           <div class='users_form_edit'>
             <div class="user-forms_edit">
               <div class='user_image_edit'>
-                <div id="image-lists"></div>
+                <div class="users_image", id="image-lists"></div>
                 <label for="user_images"></label>
                 <div id="image-list"></div>
                 <label for="user_post_image"><%= image_tag "photo.jpg", class: "image" %></label>
@@ -20,9 +20,7 @@
                 <div class="user_profiles_edit">
                   <%= f.text_field :profile, class: "profile_edit"%>
                 </div>
-                <div class="user_password">
-                 <%= f.password_field :password, autocomplete: "new-password" %>
-                 </div>
+              
                 <div class='actions'>
                   <%= f.submit "Update", class: 'btn'%>
                 </div>

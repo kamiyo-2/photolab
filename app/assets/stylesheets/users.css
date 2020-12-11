@@ -398,3 +398,9 @@ h1 {
   padding: 0 0 0 102px;
   font-size: 35px;
 }
+
+.users_image img {
+  height: 67vh;
+  border-radius: 40px;
+  padding: 15px 0 0 2vw;
+}

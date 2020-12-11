@@ -22,3 +22,4 @@ class User < ApplicationRecord
     likes.where(post_id: post_id).exists?
   end
 end
+
