@@ -1,3 +1,4 @@
+ <% if user_signed_in?%>
 <% if current_user.liked_by?(post.id) %>
   <div>
     <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
@@ -13,4 +14,4 @@
     <%= post.likes.count %>
   </div>
 <% end %>
-
+<% end %>

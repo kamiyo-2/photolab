@@ -21,3 +21,36 @@
    </div>
 </div>
 
+
+
+
+      <div class="prototype__comments">
+        <% if user_signed_in?%>
+          <%= form_with(model: [@post, @comment], local: true) do |f| %>
+            <div class="text_field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text %>
+            </div>
+            <div class="actions">
+              <%= f.submit '投稿する' , id: "submit" %>
+            </div>
+          <% end %> 
+        <% end %>        
+        <div id="list">
+  </div>
+        <ul class="comments_lists">
+          <% if @comments %>
+            <% @comments.each do |comment| %>
+              <li class="comments_list">
+                <p>
+                  <%= comment.text %>
+                  <%# <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %> %>
+                </p> 
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

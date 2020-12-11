@@ -1,6 +1,14 @@
-<% @followings.each do |user| %>
-  <div>
-    <%= link_to user.email, [user] %>
+<div class="main_form">
+  <div class="followers">
+   <% @followings.each do |user| %>
+      <div class="follower_icon">
+        <div class='user_image'>
+          <%= attachment_image_tag user, :user_image, fallback: "photo.jpg" %> 
+        </div>
+        <div class="follower_name">
+          <%= link_to user.name, [user] %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-<h2>sssss</h2>
+</div>

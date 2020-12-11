@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         validates :email,           format: { with: /@/}
-         validates :password,        length: { minimum: 6 }, confirmation: true,  format: { with: /\A[a-zA-Z0-9]+\z/ }
+         validates :email,           format: { with: /@/}, on: :create
+         validates :password,        length: { minimum: 6 }, confirmation: true,  format: { with: /\A[a-zA-Z0-9]+\z/ }, on: :create
 
          validates :name, presence: true
          validates :profile, presence: true
@@ -22,3 +22,4 @@ class User < ApplicationRecord
     likes.where(post_id: post_id).exists?
   end
 end
+
