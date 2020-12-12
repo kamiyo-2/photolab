@@ -208,3 +208,34 @@ div#pull-down.show-lists.hidden {
 .nav {
   margin-left: auto;
 }
+
+
+img.attachment.user.user_image.user_images {
+  height: 60px;
+  width: 60px;
+}
+
+
+.comment_form {
+  display: flex;
+  padding: 10px 0;
+}
+
+.user_name_form {
+  padding: 20px 0 0 0;
+}
+
+.comment_texts {
+  padding: 20px 0 0 0;
+  font-size: 30px;
+}
+
+.comment_user {
+  font-size: 30px;
+  padding: 0 20px;
+}
+
+.post_user_name {
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.all
@@ -19,9 +20,37 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+  end
+
+
+  def edit
+    if @post.user != current_user
+      redirect_to root_path
+    end
+  end
+
+
+
+  def update
+    if post.update(post_params)
+      redirect_to post_path(post.id), method: :get
+    else
+      render :edit
+    end
+  end
+
+
+  def destroy
+   if @post.user == current_user
+    @post.destroy
+   end
+    redirect_to root_path
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
   private
