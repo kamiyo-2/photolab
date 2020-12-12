@@ -10,8 +10,8 @@ class User < ApplicationRecord
          validates :profile, presence: true
 
   attachment :user_image
-  has_many :posts
-  has_many :likes
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   has_many :active_relationships, class_name: 'Follow', foreign_key: 'user_id'
   has_many :passive_relationships, class_name: 'Follow', foreign_key: 'target_user_id'
@@ -21,5 +21,13 @@ class User < ApplicationRecord
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
   end
+  
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
+  
 end
 

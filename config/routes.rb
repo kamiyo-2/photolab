@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: "users/registrations",
-    }
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
+
+
   root to: 'posts#index'
+
+  # post '/posts/guest_sign_in', to: 'posts#new_guest'
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   resources :posts do
     resources :comments
-    get 'home'
   end
-
-  get 'posts/:id/comments/:id', to: 'comments#checked'
 
   resources :users do
     resource :follow
@@ -17,7 +22,6 @@ Rails.application.routes.draw do
   end
 
   post 'like/:id' => 'likes#create', as: 'create_like'
-
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
 end

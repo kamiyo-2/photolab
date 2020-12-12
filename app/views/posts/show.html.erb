@@ -2,54 +2,59 @@
   <div class="form">
     <div class="field_show">
       <% if user_signed_in? && current_user.id == @post.user_id %>
-      <div class="navbar">
-        <div class="nav-lists">
-          <div class="background-red" id="lists">･･･
-        </div>
-        </div>
-           <div class="nav">
-        <div class="show-lists hidden" id="pull-down">
-          <div class="pull-down-list"><%= link_to "編集する", edit_post_path(@post.id), method: :get, class: :pull_down_list %></div>
-          <div class="pull-down-list"> <%= link_to "削除する", post_path, method: :delete, class: :pull_down_list %></div>
-        </div>
-        </div>
-      </div>
-      <%end%>  
-      <div class="image">
-            <div id="image-list"></div>
-            <%= attachment_image_tag @post, :post_image, class: "posts"  %>
-          <div class="text_field">
-            <%=  @post.text %>
+        <div class="navbar">
+          <div class="nav-lists">
+            <div class="background-red" id="lists">･･･
+            </div>
+          </div>
+          <div class="nav">
+            <div class="show-lists hidden" id="pull-down">
+              <div class="pull-down-list"><%= link_to "編集する", edit_post_path(@post.id), method: :get, class: :pull_down_list %></div>
+              <div class="pull-down-list"> <%= link_to "削除する", post_path, method: :delete, class: :pull_down_list %></div>
+            </div>
           </div>
         </div>
+      <%end%>  
+      <div class="image">
+        <div id="image-list"></div>
+        <%= attachment_image_tag @post, :post_image, class: "posts"  %>
+        <div class="post_user_name">
+         <%= @post.user.name%>
+         </div>
+        <div class="text_field">
+          <%=  @post.text %>
         </div>
-      <div class="prototype__comments">
-             <% if user_signed_in?%>
-          <%= form_with(model: [@post, @comment], local: true) do |f| %>
-            <div class="text_field">
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text %>
-            </div>
-            <div class="actions">
-              <%= f.submit '投稿する' , id: "submit" %>
-            </div>
-          <% end %> 
-        <% end %>        
-        <div id="list">
-  </div>
-        <ul class="comments_lists">
-          <% if @comments %>
-            <% @comments.each do |comment| %>
-              <li class="comments_list">
-                <p>
-                  <%= comment.text %>
-                  <%# <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %> %>
-                </p> 
-              </li>
-            <% end %>
-          <% end %>
-        </ul>
       </div>
+    </div>
+
+    <div class="comments">
+      <% if user_signed_in?%>
+        <%= form_with(model: [@post, @comment], local: true) do |f| %>
+       
+          <div class="text_field">
+            <%= f.label :text, "コメント" %><br />
+            <%= f.text_field :text %>
+            <%= f.submit '投稿する' , id: "submit" %>
+          </div>
+        <% end %> 
+      <% end %>        
+      <div class="comment_forms">
+        <% if @comments %>
+      
+          <% @comments.each do |comment| %>
+            <div class="comment_form">
+            <%= link_to attachment_image_tag(comment.user, :user_image, class: "user_images"), user_path(comment.user.id)%>
+            <div class="user_name_form">
+              <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %>
+            </div>
+            <div class="comment_texts">
+              <%= comment.text %>
+            </div>
+             </div>
+          <% end %>
+         
+        <% end %>
+      </div> 
     </div>
   </div>
 </div>

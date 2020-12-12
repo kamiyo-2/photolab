@@ -25,15 +25,10 @@
   width: 100wh;
 }
 
-.user__wrapper {
- 
-}
+
 .user_format {
   display: flex;
   height: 50px;
-}
-.count {
-
 }
 
 .format_button {
@@ -113,22 +108,13 @@ a.edit_button {
   font-size: 30px;
 }
 
-.user_field {
-
-}
 
 
 
 input#user_profile.profile_edit {
-  width: 57vw;
+  width: 100%;
   height: 13vh;
 }
-/* 
-div.user_profiles {
-  width: 100vh;
-  height: 20vh;
-  margin: 100px 150px 150px 25px;
-} */
 
 
 
@@ -156,47 +142,36 @@ img.attachment.user.user_image.photo.fallback {
 
 
 
-
-/* 
-input#user_profile {
-  width: 65%;
-  height: 10vh;
-  position: absolute;
-  top: 150px;
-  left: 0;
-  right: 0;
-  margin: auto;
-} */
-
 input.btn {
   width: 45%;
   height: 10vh;
-  position: absolute;
-  top: 280px;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin: 0 30%;
+}
+.actions_delete {
+  margin: 0 43%;
+  width: 10vw;
+  height: 6vh;
+}
+
+.btn_delete {
+  height: 6vh;
+  width: 10vw;
 }
 
 /* user.edit */
-.user_image_edit {
-  height: 70vh;
-  width: 67vw;
+.user_back {
   background-color: rgb(236, 236, 236);
   border-radius: 40px;
 }
 
-img.image {
-  height: 500px;
-  background-color: rgb(236, 236, 236);
-  border-radius: 40px;
-}
+
+
 
 .user_image_edit label {
   padding: 450px 0 0 0;
 }
 
-.user_image_edit input {
+input#user_user_image.users_image {
   /* display: none; */
 }
 
@@ -204,11 +179,23 @@ img.image {
   padding: 10px;
 }
 
-
-
-.user_password {
- 
+img.attachment.user.user_image.posts {
+  height: 69vh;
+  width: 67vw;
+  padding: 2%;
 }
+
+.user-forms_edit label {
+  padding: 560px 0 0 0;
+}
+
+.users_image img {
+  height: 69vh;
+  width: 67vw;
+  padding: 2%;
+  border-radius: 40px;
+}
+
 /* user.sign_in */
 
 .boxs {
@@ -399,12 +386,12 @@ h1 {
   padding: 0 0 0 102px;
   font-size: 35px;
 }
-
+/* 
 .users_image img {
   height: 67vh;
   border-radius: 40px;
   padding: 15px 0 0 2vw;
-}
+} */
 
 .user_profiles_edit {
   padding: 10px;
