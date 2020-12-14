@@ -3,7 +3,7 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h1>ログイン</h1>
       <div class="box-email">
-        <%= f.label :email, "Eメール" %><br />
+        <%= f.label :email, "Eメールアドレス" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="box-password">

@@ -33,7 +33,7 @@ img.logo {
   border-radius: 40px;
 }
 input#post_post_image.post_image {
-  display: none;
+
 }
 
 .text_field {
@@ -93,7 +93,7 @@ img.attachment.post.post_image {
 }
 
 .post_image{
-  height: 500px;
+  /* height: 500px; */
 }
 
 .post-contents {
