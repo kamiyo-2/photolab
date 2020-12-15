@@ -2,6 +2,7 @@
   <div class="main">
     <div class="inner">
       <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <div class="user_back">
           <div class='users_form_edit'>
             <div class="users_image", id="image-lists"></div>
