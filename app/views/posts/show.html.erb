@@ -21,8 +21,7 @@
         <div class="text_field">
           <%=  @post.text %>
         </div>
-      </div>
-    </div>
+      
 
     <div class="comments">
       <% if user_signed_in?%>
@@ -40,7 +39,7 @@
       
           <% @comments.each do |comment| %>
             <div class="comment_form">
-            <%= link_to attachment_image_tag(comment.user, :user_image, class: "user_images"), user_path(comment.user.id)%>
+            <%= link_to attachment_image_tag(comment.user, :user_image, class: "user_images", fallback:"photo.jpg"), user_path(comment.user.id)%>
             <div class="user_name_form">
               <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %>
             </div>
@@ -57,3 +56,5 @@
 </div>
 
 
+</div>
+    </div>
