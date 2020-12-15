@@ -3,7 +3,7 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h1>ログイン</h1>
       <div class="box-email">
-        <%= f.label :email, "Eメールアドレス" %><br />
+        <%= f.label :email, "Eメールアドレス" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="box-password">
@@ -34,7 +34,6 @@
         <% end %>
       </div>
     <% end %>
-
     <div class="box-newusr">
       <p><span>----------</span> PHOTOLABの新しいお客様ですか？ <span>----------</span></p>
       <%= link_to "PHOTOLABアカウントを作成", new_user_registration_path %>

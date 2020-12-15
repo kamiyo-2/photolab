@@ -24,14 +24,11 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
   end
 
-
   def edit
     if @post.user != current_user
       redirect_to root_path
     end
   end
-
-
 
   def update
     if @post.update(post_params)
@@ -40,7 +37,6 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-
 
   def destroy
     @post.destroy

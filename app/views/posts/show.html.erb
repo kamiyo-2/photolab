@@ -26,7 +26,7 @@
     <div class="comments">
       <% if user_signed_in?%>
         <%= form_with(model: [@post, @comment], local: true) do |f| %>
-       
+       <%= render 'layouts/error_messages', model: f.object %>
           <div class="text_field">
             <%= f.label :text, "コメント" %><br />
             <%= f.text_field :text %>

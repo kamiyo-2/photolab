@@ -1,6 +1,7 @@
 <div class="form">
   <div class="field">
     <%= form_with(model: @post,local: true) do |f| %>
+     <%= render 'layouts/error_messages', model: f.object %>
       <div class="image">
         <div id="image-list"></div>
         <label for="post_post_image"><%= attachment_image_tag @post, :post_image, class: "posts" , fallback:"photo.jpg" %></label>
