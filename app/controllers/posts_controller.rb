@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user)
   end
 
   def new
@@ -34,8 +34,8 @@ class PostsController < ApplicationController
 
 
   def update
-    if post.update(post_params)
-      redirect_to post_path(post.id), method: :get
+    if @post.update(post_params)
+      redirect_to post_path(@post.id), method: :get
     else
       render :edit
     end
@@ -43,9 +43,7 @@ class PostsController < ApplicationController
 
 
   def destroy
-   if @post.user == current_user
     @post.destroy
-   end
     redirect_to root_path
   end
 

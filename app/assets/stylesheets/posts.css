@@ -239,3 +239,76 @@ img.attachment.user.user_image.user_images {
   font-size: 20px;
   font-weight: bold;
 }
+
+div#lists.list_path {
+  height: 20px;
+}
+
+.nav_image {
+  height: 15px;
+  width: 15px;
+  position: relative;
+  padding: 0px 0 0px 25px;
+}
+
+
+
+
+
+  .more {
+    position: absolute;
+    cursor: pointer;
+    right: 30px;
+    z-index: 2;
+    height: 100px;
+    width: 80px;
+    text-align: right;
+  }
+
+  .more_list {
+    position: absolute;
+    text-align: left;
+    width: 80px;
+    right: 0;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+ 
+
+
+  
+ul {list-style: none;}
+ul.global_menu{position: relative;}
+ul.global_menu > li{
+    float: left;
+    width:25%;
+    height: 30px;
+  
+}
+
+ul.global_menu > li ul{
+  display: flex;
+    display: none;    
+    position: absolute;  /*ul.global_menu に対して位置指定*/
+    top:30px;
+    left:0;
+    width: 100%; /*横幅いっぱいに広げる*/
+}
+
+
+ul.global_menu > li:hover ul{
+    display: block;
+}
+
+ul.global_menu > li > ul > li{
+
+  float: left;
+}
+.navber {
+  padding: 20px 40px 80px 0px;
+}

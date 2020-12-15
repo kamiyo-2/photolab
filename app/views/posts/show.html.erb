@@ -1,20 +1,17 @@
 <div class="main_form">  
   <div class="form">
-    <div class="field_show">
+    <div class="more">
       <% if user_signed_in? && current_user.id == @post.user_id %>
-        <div class="navbar">
-          <div class="nav-lists">
-            <div class="background-red" id="lists">･･･
-            </div>
-          </div>
-          <div class="nav">
-            <div class="show-lists hidden" id="pull-down">
-              <div class="pull-down-list"><%= link_to "編集する", edit_post_path(@post.id), method: :get, class: :pull_down_list %></div>
-              <div class="pull-down-list"> <%= link_to "削除する", post_path, method: :delete, class: :pull_down_list %></div>
-            </div>
-          </div>
-        </div>
-      <%end%>  
+        <ul class="global_menu">
+          <li><a class="navber" ,href="#"><%= image_tag 'nav-top.png' ,class: "nav_image"%></a>
+            <ul>
+              <li><%= link_to "編集する", edit_post_path(@post.id), method: :get, class: :pull_down_list %></li>
+              <li><%= link_to "削除する", post_path, method: :delete, class: :pull_down_list %></li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+      </div> 
       <div class="image">
         <div id="image-list"></div>
         <%= attachment_image_tag @post, :post_image, class: "posts"  %>

@@ -4,8 +4,7 @@ require "refile/file_double"
 RSpec.describe Post, type: :model do
   before do
     @post = FactoryBot.build(:post)
-    @post.post_image = Refile::FileDouble.new("dummy", "logo.png", content_type: "image/png")
-    @post.save
+    
   end
 
   describe '新規投稿機能がうまくいくとき' do
