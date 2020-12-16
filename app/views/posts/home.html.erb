@@ -1,15 +1,15 @@
 <%= render 'show',user: @user %>
-<div class="user-post">
-          <div class="`user_post-contents">
-            <% @posts.each do |post| %>
-              <div class="user_post-content">
-                <div class="post_body">
-                  <div class='image_content'>
-                    <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
-                  </div>
-                  <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
-                </div>
-              </div> 
-            <% end %>
+  <div class="user-post">
+    <div class="`user_post-contents">
+      <% @posts.each do |post| %>
+        <div class="user_post-content">
+          <div class="post_body">
+            <div class='image_content'>
+              <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
+            </div>
+              <%= link_to post.text, post_path(post.id), method: :get, class: :card__title%>
           </div>
-        </div>
+        </div> 
+      <% end %>
+    </div>
+</div>

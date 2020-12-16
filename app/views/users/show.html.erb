@@ -13,46 +13,39 @@
             <div class="user_format">
               <div class="format_button">
                 <div class="count"><%= @posts.count%></div>
-                  <p>投稿</p>
+                <p>投稿</p>
               </div>
-            <div class="format_button">
-             <div class="count"> <%= @user.followings.count %></div>
-              <p><%= link_to "フォロー中", [@user, :followings] %></p>
-            </div>
-            <div class="format_button">
-              <div class="count"><%=@user.followers.count %></div>
-              <p><%= link_to "フォロワー", [@user, :followers] %></p>
+              <div class="format_button">
+                <div class="count"> <%= @user.followings.count %></div>
+                <p><%= link_to "フォロー中", [@user, :followings] %></p>
+              </div>
+              <div class="format_button">
+                <div class="count"><%=@user.followers.count %></div>
+                <p><%= link_to "フォロワー", [@user, :followers] %></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="user_profile">
-      <div class="user_name">
-        <%= @user.name %>
-      </div>
-      <div class="user_profiles">
-        <%= @user.profile %>
-      </div>
-      <div class="follows">
-        <%if user_signed_in? && current_user != @user %>
-          <% if current_user.active_relationships.exists?(target_user_id: @user.id) %>
+      <div class="user_profile">
+        <div class="user_name">
+          <%= @user.name %>
+        </div>
+        <div class="user_profiles">
+          <%= @user.profile %>
+        </div>
+        <div class="follows">
+          <%if user_signed_in? && current_user != @user %>
+            <% if current_user.active_relationships.exists?(target_user_id: @user.id) %>
               <%= link_to 'unfollow', [@user, :follow], method: :delete, class: :unfollow %>
             <% else %>
               <%= link_to 'follow', [@user, :follow], method: :post, class: :follow %>
             <% end %>
-        <% else%>
-          <%= link_to "プロフィールを編集", edit_user_path(current_user), class: :edit_button %>
-        <% end %>
-      <div>
-
-
-      
-    </div>
+          <% else%>
+            <%= link_to "プロフィールを編集", edit_user_path(current_user), class: :edit_button %>
+          <% end %>
           <div class="user_button">
-            <div class="user_buttons">投稿
-            </div>
-            
+            <div class="user_buttons">投稿</div>
           </div>
         </div>  
         <div class="user-post">
@@ -69,7 +62,7 @@
             <% end %>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </div>

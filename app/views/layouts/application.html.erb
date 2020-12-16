@@ -12,18 +12,17 @@
     <header>
       <a><%= link_to "PHOTOLAB", root_path,  class: :logo %></a>
       <div class="nav_botton">
-      <ul>
-        <% if user_signed_in? %>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header_button"  %></li>
-          <li><%= link_to "New Post",  new_post_path, class:"header_button" %></li>
-           <li>    <%= link_to current_user.name, user_path(current_user) , class:"header_button" %></li>
-        <% else %>
-          <li><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class:"header_button" %></li>
-          <li><%= link_to "ログイン", new_user_session_path, class:"header_button" %></li>
-          <li><%= link_to "新規登録", new_user_registration_path, class:"header_button" %></li>
-        <% end %>
-       </div>
-      </ul>
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header_button"  %></li>
+            <li><%= link_to "New Post",  new_post_path, class:"header_button" %></li>
+            <li>    <%= link_to current_user.name, user_path(current_user) , class:"header_button" %></li>
+          <% else %>
+            <li><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class:"header_button" %></li>
+            <li><%= link_to "ログイン", new_user_session_path, class:"header_button" %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class:"header_button" %></li>
+          <% end %>
+        </ul>
       </div>
     </header>
     <%= yield %>

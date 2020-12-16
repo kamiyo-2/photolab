@@ -5,6 +5,9 @@ class Users::SessionsController < Devise::SessionsController
 
   def new_guest
     user = User.guest
+    user.name = "guest"
+    user.profile = "ゲストユーザーとしてログインしています。こちらはプロフィールの項目です。" 
+    user.save
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
