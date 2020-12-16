@@ -24,8 +24,9 @@ class User < ApplicationRecord
   
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      user.name = "Guest"
+      user.profile = "ゲストユーザーとしてログインしています。こちらはプロフィールの項目です。" 
+      user.password = "123qwe"
     end
   end
   
