@@ -12,4 +12,5 @@ class FollowsController < ApplicationController
 
     redirect_to [:user, { id: params[:user_id] }]
   end
+  
 end

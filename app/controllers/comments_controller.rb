@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
       @post = @comment.post
       @comments = @post.comments
       render "posts/show"
+    end
   end
-end
 
   private
   def comment_params

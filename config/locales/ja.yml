@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        profile: プロフィール
+        user_image: 画像
+      post:
+        text: テキスト
+        post_image: 画像
+      comment:
+        text: テキスト
+        

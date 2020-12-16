@@ -1,6 +1,7 @@
 <div class="form">
   <div class="field">
     <%= form_with(model: @post,local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
       <div class="image">
         <div id="image-list"></div>
         <label for="post_post_image"><%= attachment_image_tag @post, :post_image, class: "posts" , fallback:"photo.jpg" %></label>
@@ -11,11 +12,10 @@
       </div>
       <div class="action_form">
         <div class="actions">
-        <%= button_to "キャンセル", {controller: 'posts', action: 'index'}, {method: :get} %>
+          <%= button_to "キャンセル", {controller: 'posts', action: 'index'}, {method: :get} %>
         </div>
         <div class="actions">
-          <%= f.submit "投稿を送信" %>
-          </div>
+          <%= f.submit "  送  信  " %>
         </div>
       </div>
      <% end %>

@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     end
 
     result = update(params, *options)
-
     clean_up_passwords
     result
   end

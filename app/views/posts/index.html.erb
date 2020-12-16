@@ -1,46 +1,46 @@
-<main class="main"><%= link_to image_tag("top.jpg", class: :logo), root_path %>
-    <div class="inner">
-      <div class="post-contents">
-        <div>
-          <% @posts.each do |post| %>
-            <div class="post-content">
-              <div class="post_body">
-                <div class='image_content'>
-                  <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
-                </div>
+<div class="main"><%= link_to image_tag("top.jpg", class: :logo), root_path %>
+  <div class="inner">
+    <div class="post-contents">
+      <div>
+        <% @posts.each do |post| %>
+          <div class="post-content">
+            <div class="post_body">
+              <div class='image_content'>
+                <%= link_to attachment_image_tag(post, :post_image, class: "post_image"),post_path(post.id)%>
               </div>
-              <div class="text_form">
-                  <%= link_to post.text, post_path(post.id), method: :get, class: :card_title%>
-                <div class="like", id="post_<%= post.id %>">
-                     <% if user_signed_in?%>
-<% if current_user.liked_by?(post.id) %>
-  <div>
-    <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
-      <i class="fa fa-heart unlike-btn"></i>
-    <% end %>
-    <%= post.likes.count %>
-  </div>
-<% else %>
-  <div>
-    <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
-      <i class="fa fa-heart like-btn"></i>
-    <% end %>
-    <%= post.likes.count %>
-  </div>
-<% end %>
-<% end %>
-                </div>
+            </div>
+            <div class="text_form">
+              <%= link_to post.text, post_path(post.id), method: :get, class: :card_title%>
+              <div class="like", id="post_<%= post.id %>">
+                <% if user_signed_in?%>
+                  <% if current_user.liked_by?(post.id) %>
+                    <div>
+                      <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
+                      <i class="fa fa-heart unlike-btn"></i>
+                      <% end %>
+                      <%= post.likes.count %>
+                    </div>
+                  <% else %>
+                    <div>
+                      <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
+                      <i class="fa fa-heart like-btn"></i>
+                      <% end %>
+                      <%= post.likes.count %>
+                    </div>
+                  <% end %>
+                <% end %>
               </div>
-               <div class="user_form">
-               <%= attachment_image_tag post.user, :user_image, fallback: "photo.jpg", class:"user_photo" %>
-               <div class="users_name">
-              <%= link_to post.user.name,  user_path(post.user.id), method: :get, class: :card__title%>
+            </div>
+            <div class="user_form">
+              <%= attachment_image_tag post.user, :user_image, fallback: "photo.jpg", class:"user_photo" %>
+              <div class="users_name">
+                <%= link_to post.user.name,  user_path(post.user.id), method: :get, class: :card__title%>
               </div>
-              </div>
-            </div> 
-          <% end %>
-        </div>
+            </div>
+          </div> 
+        <% end %>
       </div>
-   </div>
+    </div>
+  </div>
 </div>
 

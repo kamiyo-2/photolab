@@ -11,50 +11,43 @@
           </li>
         </ul>
       <% end %>
-      </div> 
-      <div class="image">
-        <div id="image-list"></div>
-        <%= attachment_image_tag @post, :post_image, class: "posts"  %>
-        <div class="post_user_name">
-         <%= @post.user.name%>
-         </div>
-        <div class="text_field">
-          <%=  @post.text %>
-        </div>
-      
-
-    <div class="comments">
-      <% if user_signed_in?%>
-        <%= form_with(model: [@post, @comment], local: true) do |f| %>
-       
-          <div class="text_field">
-            <%= f.label :text, "コメント" %><br />
-            <%= f.text_field :text %>
-            <%= f.submit '投稿する' , id: "submit" %>
-          </div>
-        <% end %> 
-      <% end %>        
-      <div class="comment_forms">
-        <% if @comments %>
-      
-          <% @comments.each do |comment| %>
-            <div class="comment_form">
-            <%= link_to attachment_image_tag(comment.user, :user_image, class: "user_images", fallback:"photo.jpg"), user_path(comment.user.id)%>
-            <div class="user_name_form">
-              <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %>
+    </div> 
+    <div class="image">
+      <div id="image-list"></div>
+      <%= attachment_image_tag @post, :post_image, class: "posts"  %>
+      <div class="post_user_name">
+        <%= @post.user.name%>
+      </div>
+      <div class="text_field">
+        <%=  @post.text %>
+      </div>
+      <div class="comments">
+        <% if user_signed_in?%>
+          <%= form_with(model: [@post, @comment], local: true) do |f| %>
+            <%= render 'layouts/error_messages', model: f.object %>
+            <div class="text_field">
+              <%= f.label :text, "コメント" %>
+              <%= f.text_field :text %>
+              <%= f.submit '投稿する' , id: "submit" %>
             </div>
-            <div class="comment_texts">
-              <%= comment.text %>
-            </div>
-             </div>
+          <% end %> 
+        <% end %>        
+        <div class="comment_forms">
+          <% if @comments %>
+            <% @comments.each do |comment| %>
+              <div class="comment_form">
+                <%= link_to attachment_image_tag(comment.user, :user_image, class: "user_images", fallback:"photo.jpg"), user_path(comment.user.id)%>
+                <div class="user_name_form">
+                  <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %>
+                </div>
+                <div class="comment_texts">
+                  <%= comment.text %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
-         
-        <% end %>
-      </div> 
+        </div> 
+      </div>
     </div>
   </div>
 </div>
-
-
-</div>
-    </div>

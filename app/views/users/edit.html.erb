@@ -2,31 +2,32 @@
   <div class="main">
     <div class="inner">
       <%= form_with(model: @user, local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class="user_back">
           <div class='users_form_edit'>
             <div class="users_image", id="image-lists"></div>
             <div id="image-list"></div>
-             <label for="post_post_image"><%= attachment_image_tag @user, :user_image, class: "posts" , fallback: "photo.jpg" %></label>
+            <label for="post_post_image"><%= attachment_image_tag @user, :user_image, class: "posts" , fallback: "photo.jpg" %></label>
             <%= f.attachment_field :user_image, class: :users_image %>
           </div>  
         </div>
-          <div class="user_texts">
-            <div class="user_name_edit">
-              <%= f.text_field :name, autofocus: true%>
-            </div>
-            <div class="user_profiles_edit">
-              <%= f.text_field :profile, class: "profile_edit"%>
-            </div>
+        <div class="user_texts">
+          <div class="user_name_edit">
+            <%= f.text_field :name, autofocus: true%>
           </div>
-          <div class='actions'>
-            <%= f.submit "Update", class: 'btn'%>
+          <div class="user_profiles_edit">
+            <%= f.text_field :profile, class: "profile_edit"%>
           </div>
-          <div class='actions_delete'>
-            <%=link_to user_path(current_user.id), method: :delete  do %>
-              <button class="btn_delete" >Delete</button>
-            <%end%>
-          </div>        
-      <% end %>   
+        </div>
+        <div class='actions'>
+          <%= f.submit "Update", class: 'btn'%>
+        </div>
+        <div class='actions_delete'>
+          <%=link_to user_path(current_user.id), method: :delete  do %>
+            <button class="btn_delete" >Delete</button>
+          <%end%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -18,12 +18,12 @@ RSpec.describe Post, type: :model do
     it "imageが空だと登録できない" do
       @post.post_image = nil
       @post.valid?
-      expect(@post.errors.full_messages).to include("Post image can't be blank")
+      expect(@post.errors.full_messages).to include("画像を入力してください")
     end
     it "textが空だと登録できない" do
       @post.text = ""
       @post.valid?
-      expect(@post.errors.full_messages).to include("Text can't be blank")
+      expect(@post.errors.full_messages).to include("テキストを入力してください")
     end
   end
 end
