@@ -12,6 +12,7 @@ class User < ApplicationRecord
   attachment :user_image
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :active_relationships, class_name: 'Follow', foreign_key: 'user_id'
   has_many :passive_relationships, class_name: 'Follow', foreign_key: 'target_user_id'
   has_many :followings, through: :active_relationships, source: :target_user
